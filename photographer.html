@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/all.css">
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/lightbox.css" type="text/css" />
+  <link href="/css/style.css" rel="stylesheet" type="text/css" />
+  <title>Fisheye - photographe</title>
+</head>
+
+<body>
+  <!-- Container -->
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <a href="http://127.0.0.1:5500/index.html">
+        <img src="assets/images/logo.png" class="logo" alt="logo page d'acceuil" id="logo" />
+      </a>
+    </header>
+    <!-- End of header -->
+
+    <!-- Main -->
+    <main id="main" aria-hidden="false">
+      <!-- photograph header -->
+      <div class="photograph-header" id="profil">
+        <div id="displayModal">
+          <button class="contact_button">Contactez-moi</button>
+        </div>
+      </div>
+      <!-- End of photograph header -->
+
+      <!-- filter -->
+      <div class="trier">
+        <label id="trierPar" for="trier par"> Trier par:</label>
+        <select id="trier">
+          <option value="populaire" id="populaire">Populaire</option>
+          <option value="date" id="date">Date</option>
+          <option value="titre" id="titre">Titre</option>
+        </select>
+      </div>
+      <!-- End of filter -->
+
+      <!-- Lightbox -->
+        <div id="lightbox" class="lightbox" role="dialog" aria-hidden="true">
+          <button class="lightbox_close">
+            <img src="assets/icons/close.svg" alt="icon fermeture lightbox" />
+          </button>
+          <button class="lightbox_prev">
+            <img src="assets/icons/next.svg" alt="icon précédent" />
+          </button>
+          <button class="lightbox_next">
+            <img src="assets/icons/next.svg" alt="icon suivant" />
+          </button>
+          <div class="lightbox_container"></div>
+          <p id="titre_photo"></p>
+        </div>
+      <!-- End of Lightbox -->
+
+      <!-- Frame -->
+      <div id="photographeMedia"></div>
+      <div id="all_Media_Like">
+        <p id="tout_les_likes"></p>
+        <i class="fas fa-heart" title="nombre total de like pour tous les medias"></i>
+        <p id="pricePhotographe"></p>
+      </div>
+
+      <div class="marginBottom"></div>
+    </main>
+    <!-- End of main -->
+  </div>
+  <!-- End of container -->
+
+  <!-- Modal -->
+  <div id="contact_modal" role="dialog" aria-hidden="true">
+    <div class="modal" id="formValid">
+      <header>
+        <h2 id="myName">Contactez-moi</h2>
+        <img src="assets/icons/close.svg" id="closeModal" alt="fermeture du formulaire" />
+      </header>
+      <!-- Form -->
+      <form id="form" >
+        <!-- firstname -->
+        <div >
+          <label for="firstname">Prénom</label>
+          <input
+            aria-label="First name"
+            type="text" 
+            id="first"
+            name="firstname" 
+          />
+          <span id="errorFirst"></span>
+        </div>
+        <!-- End of firstname -->
+
+        <!-- lastname -->
+        <div >
+          <label for="nom">Nom</label>
+          <input 
+            aria-label="Last name"
+            type="text" 
+            id="last" 
+            name="nom"
+          />
+          <span id="errorLast"></span>
+        </div>
+        <!-- End of lastname -->
+
+        <!-- email -->
+        <div >
+          <label for="email">Email</label>
+          <input 
+            aria-label="Email"
+            type="email" 
+            id="email" 
+            name="email"
+            />
+          <span id="errorEmail"></span>
+        </div>
+        <!-- End of email -->
+
+        <!-- message -->
+        <div >
+          <label for="Your message">Votre message</label>
+          <textarea 
+            aria-label="Your message"
+            type="text" 
+            id="yourMessage" 
+            name="message" 
+            />
+          </textarea>
+          <span id="errorMessage"></span>
+        </div>
+        <!-- End of message -->
+          
+        <!-- button -->
+        <button aria-label="send" class="contact_button" type="submit" id="btn-submit">
+          Envoyer
+        </button>
+        <!-- End of button -->
+      </form>
+      <!-- End of form -->
+    </div>
+  </div>
+  <!-- End of modal -->
+
+  <script src="scripts/pages/lightbox.js"></script>
+  <script src="scripts/factories/mediaFactory.js"></script>
+  <script src="scripts/factories/videos.js"></script>
+  <script src="scripts/factories/images.js"></script>
+  <script src="scripts/utils/contactForm.js"></script>
+  <script src="scripts/factories/photographer.js"></script>
+  <script src="scripts/pages/photographer.js"></script>
+  <script src="https://kit.fontawesome.com/1b66eac319.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
