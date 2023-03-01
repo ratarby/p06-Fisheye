@@ -4,6 +4,10 @@
 const displayModal = document.getElementById("displayModal");
 const closeModal = document.getElementById("closeModal");
 
+const main = document.getElementById("main");
+const modal = document.getElementById("contact_modal");
+
+
 // verification des champs du formulaire avec les regex
 const nameRegex = /^\S[a-za-zàáâäçèéêëìíîïñòóôöùúûüA-Z-\s]{2,}$/;
 const emailRegex = /^([a-z0-9]+(?:[._-][a-z0-9]+)*)@([a-z0-9]+(?:[.-][a-z0-9]+)*\.[a-z]{2,})$/;
@@ -29,48 +33,23 @@ const errorMsg = document.getElementById("errorMessage");
 
 const msgValidated = document.getElementById("formValid");
 
-
-
-displayModal.addEventListener("click", () => {
-  const main = document.getElementById("main");
-  const modal = document.getElementById("contact_modal");
-  modal.style.display = "block";
-  main.setAttribute("aria-hidden", "true");
-  modal.setAttribute("aria-hidden", "false");
-  closeModal.focus();
-  form.reset();
-});
-
-closeModal.addEventListener("click", () => {
-  const main = document.getElementById("main");
-  const modal = document.getElementById("contact_modal");
-  modal.style.display = "none";
-  main.setAttribute("aria-hidden", "false");
-  modal.setAttribute("aria-hidden", "true");
-  displayModal.focus();
-});
-
 document.addEventListener("keyup", (e) => {
-    if (e.key == "Escape") {
-      const modal = document.getElementById("contact_modal");
-      modal.style.display = "none";
-      displayModal.focus();
-      window.location.reload();
-    }
-  });
-
-
-
-
+  if (e.key == "Escape") {
+    const modal = document.getElementById("contact_modal");
+    modal.style.display = "none";
+    displayModal.focus();
+    window.location.reload();
+  }
+});
 
 // validation du formulaire au clique sur le bouton submit
 const btnSubmit = document.getElementById("btn-submit");
 const form = document.getElementById("form");
 btnSubmit.addEventListener("click", (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    formValid();
-  });
+  formValid();
+});
 
 
 //validatation des inputs à la perte du focus
@@ -108,8 +87,35 @@ message.addEventListener("change", () => {
   }
 });
 
+displayModal.addEventListener("click", () => {
+  modal.style.display = "block";
+  main.setAttribute("aria-hidden", "true");
+  modal.setAttribute("aria-hidden", "false");
+  closeModal.focus();
+  form.reset();
+});
+
+closeModal.addEventListener("click", () => {
+  const main = document.getElementById("main");
+  const modal = document.getElementById("contact_modal");
+  modal.style.display = "none";
+  main.setAttribute("aria-hidden", "false");
+  modal.setAttribute("aria-hidden", "true");
+  displayModal.focus();
+});
+
+closeModal.addEventListener("click", () => {
+  const main = document.getElementById("main");
+  const modal = document.getElementById("contact_modal");
+  modal.style.display = "none";
+  main.setAttribute("aria-hidden", "false");
+  modal.setAttribute("aria-hidden", "true");
+  displayModal.focus();
+});
+
+
 function formValid() {
-  
+
   if (!nameRegex.test(firstName.value.trim())) {
     errorFirst.textContent = errorFirstValue;
     firstName.classList.add("border-red");

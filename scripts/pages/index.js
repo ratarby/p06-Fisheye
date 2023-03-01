@@ -1,3 +1,6 @@
+import { photographerFactory } from './../factories/photographer.js';
+
+
 let url = 'data/photographers.json'
 
 async function getPhotographers() {
@@ -18,10 +21,15 @@ async function getPhotographers() {
       })
     })
 }
+// display data in the DOM 
+async function displayData() {
+  const photographers = await getPhotographers();
+  getPhotographers(photographers);
+}
 
 async function init() {
-  // Récupère les datas des photographes
   const { photographers } = await getPhotographers();
-  displayData(photographers)
+  displayData(photographers);
 }
 init()
+

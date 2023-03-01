@@ -1,4 +1,4 @@
-class Videos {
+export class Videos {
   constructor(data) {
     this.title = data.title;
     this.likes = data.likes;
@@ -8,11 +8,10 @@ class Videos {
     this.liked = false;
   }
 
-
   getVideoCardDOM() {
     // ------------------------------------------------------------ div
     const divVideoContent = document.createElement("div");
-    divVideoContent.setAttribute("class","videoContent");
+    divVideoContent.setAttribute("class", "videoContent");
     // ------------------------------------------------------------ video path
     const video = `assets/images/${this.video}`;
     // ------------------------------------------------------------ a
@@ -70,5 +69,5 @@ class Videos {
     divVideoContent.appendChild(likeVideo);
     return divVideoContent;
   }
-
 }
+

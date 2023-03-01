@@ -1,5 +1,5 @@
-class Lightbox {
-  constructor() {
+export class Lightbox {
+  constructor(){
     this.listMedias = [];
     this.index = 0;
     this.onKeyUp();
@@ -22,7 +22,7 @@ class Lightbox {
     const main = document.getElementById("main");
     // ------------------------------------------------------------------- lightbox
     const lightbox = document.getElementById("lightbox");
-
+    // ------------------------------------------------------------------- lightbox_close
     const lightboxClose = document.querySelector(".lightbox_close");
     main.setAttribute("aria-hidden", "true");
     lightbox.setAttribute("aria-hidden", "false");
@@ -44,7 +44,7 @@ class Lightbox {
       photo.setAttribute("alt", the_title);
       // ------------------------------------------------------------------- title_photo
       title_photo.innerHTML = the_title;
-      if (container_img.firstChild != null) {
+      if (container_img.firstChild !== null) {
         container_img.removeChild(container_img.firstChild);
       }
       container_img.appendChild(photo);
@@ -69,7 +69,7 @@ class Lightbox {
       // ------------------------------------------------------------------- title_photo
       let title_photo = document.getElementById("titre_photo");
       title_photo.innerHTML = the_title;
-      if (container_img.firstChild != null) {
+      if (container_img.firstChild !== null) {
         container_img.removeChild(container_img.firstChild);
       }
       container_img.appendChild(the_video);
@@ -102,8 +102,8 @@ class Lightbox {
     }
     this.displayMedia();
   }
+
   prev() {
-    // --
     if (this.index <= 0) {
       this.index = this.listMedias.length;
     } else {
@@ -111,6 +111,7 @@ class Lightbox {
     }
     this.displayMedia();
   }
+  
   close() {
     const lightbox = document.querySelector("#lightbox");
     lightbox.style.display = "none";

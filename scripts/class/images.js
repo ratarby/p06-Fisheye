@@ -1,4 +1,4 @@
-class Images {
+export class Images {
   constructor(data) {
     this.title = data.title;
     this.likes = data.likes;

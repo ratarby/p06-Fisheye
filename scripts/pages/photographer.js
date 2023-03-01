@@ -1,3 +1,7 @@
+import { Lightbox } from "./../class/lightbox.js";
+import { MediaFactory } from "./../class/mediaFactory.js";
+
+
 //Mettre le code JavaScript lié à la page photographer.html
 let urlPhotographer = window.location.search;
 let searchParams = new URLSearchParams(urlPhotographer);
@@ -13,7 +17,7 @@ fetch(url_Photographer)
   })
   .then((data) => {
     //récupération des données de chaque photographe ==> boucle for
-    for (i = 0; i < data.photographers.length; i++) {
+    for (let i = 0; i < data.photographers.length; i++) {
       if (id == data.photographers[i].id) {
         const photographer = data.photographers[i];
         //------------------------------------------------------------------divProfil
@@ -21,7 +25,7 @@ fetch(url_Photographer)
         // -----------------------------------------------------------------imgProfil
         const imgProfil = document.createElement("div");
         imgProfil.id = "img_profil";
-        imgProfil.innerHTML = 
+        imgProfil.innerHTML =
           `<img 
             class = "imgProfil" 
             src = "assets/photographers/${photographer.portrait}" 
@@ -40,8 +44,8 @@ fetch(url_Photographer)
         divProfil.after(profil);
         divProfil.appendChild(imgProfil);
         // -----------------------------------------------------------------contactForm
-        const h2 = document.getElementById( 'myName' );
-        h2.innerHTML =  `Contactez moi  ${photographer.name}`;
+        const h2 = document.getElementById('myName');
+        h2.innerHTML = `Contactez moi  ${photographer.name}`;
       }
     }
 
@@ -58,29 +62,29 @@ fetch(url_Photographer)
     //trie des medias
     const trier = document.querySelector("select");
     trier.addEventListener("change", (e) => {
-        e.preventDefault();
+      e.preventDefault();
 
-        const mediaContent = document.getElementById("photographeMedia");
-        while (mediaContent.hasChildNodes()) {
+      const mediaContent = document.getElementById("photographeMedia");
+      while (mediaContent.hasChildNodes()) {
         mediaContent.removeChild(mediaContent.firstChild);
-        }
-        const trie = trier.options;
-        if (trie.selectedIndex == 0) {
-          lightbox.listMedias.sort((a, b) => {
-            return b.likes - a.likes;
-          });
-        } else if (trie.selectedIndex == 1) {
-          lightbox.listMedias.sort((a, b) => {
-            return new Date(b.date) - new Date(a.date);
-          });
-        } else if (trie.selectedIndex == 2) {
-          lightbox.listMedias.sort((a, b) => {
-            return a.title.localeCompare(b.title);
-          });
-        }
-        //fonction pour afficher les media triés
-        displayMedia();
-      });
+      }
+      const trie = trier.options;
+      if (trie.selectedIndex == 0) {
+        lightbox.listMedias.sort((a, b) => {
+          return b.likes - a.likes;
+        });
+      } else if (trie.selectedIndex == 1) {
+        lightbox.listMedias.sort((a, b) => {
+          return new Date(b.date) - new Date(a.date);
+        });
+      } else if (trie.selectedIndex == 2) {
+        lightbox.listMedias.sort((a, b) => {
+          return a.title.localeCompare(b.title);
+        });
+      }
+      //fonction pour afficher les media triés
+      displayMedia();
+    });
 
     // Somme des likes avec la méthode reduce
     const sommeMediaLike = likeArray.reduce(
@@ -91,38 +95,39 @@ fetch(url_Photographer)
     all_media_like.innerHTML = sommeMediaLike;
     price_photographe.innerHTML = pricePhotographe + "€/jour";
 
-        // appel de la function global qui affiche les médias
-        displayMedia();
+    // appel de la function global qui affiche les médias
+    displayMedia();
   });
 
 
-  // function global qui affiche les médias
-  // si "image = true" alors affiche image sinon affiche video
+// function global qui affiche les médias
+// si "image = true" alors affiche image sinon affiche video
 function displayMedia() {
   for (let i = 0; i < lightbox.listMedias.length; i++) {
     const media = lightbox.listMedias[i];
-    if (media.image) { 
+    if (media.image) {
       let type = "image";
       const mediaContent = document.getElementById("photographeMedia");
       const mediaModel = new MediaFactory(media, type);
       const mediaCardDom = mediaModel.getImageCardDOM();
       mediaContent.appendChild(mediaCardDom);
       mediaCardDom.firstChild.addEventListener("click", (e) => {
-          e.preventDefault();
-          lightbox.play(i);
-          lightbox.displayMedia();
-        });
+        e.preventDefault();
+        lightbox.play(i);
+        lightbox.displayMedia();
+      });
     } else {
       let type = "video";
       const mediaContent = document.getElementById("photographeMedia");
+      // eslint-disable-next-line no-undef
       const videoModel = new MediaFactory(media, type);
       const videoCardDom = videoModel.getVideoCardDOM();
       mediaContent.appendChild(videoCardDom);
       videoCardDom.firstChild.addEventListener("click", (e) => {
-          e.preventDefault();
-          lightbox.play(i);
-          lightbox.displayMedia();
-        });
+        e.preventDefault();
+        lightbox.play(i);
+        lightbox.displayMedia();
+      });
     }
   }
 }
