@@ -1,5 +1,6 @@
 export class Videos {
   constructor(data) {
+    this.id = data.id;
     this.title = data.title;
     this.likes = data.likes;
     this.video = data.video;
@@ -12,10 +13,13 @@ export class Videos {
     // ------------------------------------------------------------ div
     const divVideoContent = document.createElement("div");
     divVideoContent.setAttribute("class", "videoContent");
-    // ------------------------------------------------------------ video path
-    const video = `assets/images/${this.video}`;
+    divVideoContent.setAttribute("aria-label", "videoContent");
     // ------------------------------------------------------------ a
     const linkVideo = document.createElement("a");
+    linkVideo.setAttribute("href", "/photographer.html" + "?" + `id=${this.id}`);
+    linkVideo.setAttribute("title", "voir le media");
+    // ------------------------------------------------------------ video path
+    const video = `assets/images/${this.video}`;
     // ------------------------------------------------------------ i
     const play = document.createElement("i");
     play.className = "fas fa-play-circle";
@@ -35,10 +39,11 @@ export class Videos {
     divVideoContent.appendChild(linkVideo);
     // ------------------------------------------------------------ div
     const titleVideo = document.createElement("div");
-    // --
+    // ------------------------------------------------------------ h3
     const h3 = document.createElement("h3");
     h3.className = "titreMedia";
     h3.textContent = this.title;
+    // ------------------------------------------------------------ div>h3
     titleVideo.appendChild(h3);
     divVideoContent.appendChild(titleVideo);
     // ------------------------------------------------------------ div

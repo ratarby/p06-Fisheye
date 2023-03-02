@@ -1,4 +1,3 @@
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.css');
 @import url('/css/normalize.css');
 @import url('/css/style.css');
 
@@ -10,7 +9,7 @@
   padding: 0;
 }
 
-header  #logo{
+header #logo {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -60,15 +59,16 @@ header  #logo{
   font-size: 3.4rem;
   font-weight: bold;
   color: var(--secondary-color);
-  
+
 }
 
-.photographerCity{
+.photographerCity {
   font-size: 1.5rem;
   font-weight: bold;
   color: var(--secondary-color);
   margin-top: -1rem;
 }
+
 .photographerTagline {
   font-size: 1.125rem;
   font-weight: 400;
@@ -313,7 +313,7 @@ a {
   color: #fff;
   font-size: 20px;
   font-weight: bold;
-  right :3.1%;
+  right: 3.1%;
   bottom: 0;
   position: fixed;
 }
@@ -324,7 +324,7 @@ a {
   font-weight: bold;
 }
 
-.fas{
+.fas {
   margin-right: 25px;
   font-size: 20px;
   font-weight: bold;
@@ -337,7 +337,7 @@ legend {
 }
 
 #errorFirst,
-#errorLast, 
+#errorLast,
 #errorEmail,
 #errorMessage {
   font-size: 1.25rem;
@@ -350,7 +350,7 @@ legend {
 
 .border-red {
   border: solid var(--error-color) 3px;
-  border-radius: 5px;  
+  border-radius: 5px;
 }
 
 .marginBottom {
@@ -362,14 +362,15 @@ legend {
 }
 
 
+
 @media screen and (max-width: 1257px) {
 
   .logo {
-      height: 30px;
-      margin-left: 50px;
+    height: 30px;
+    margin-left: 50px;
   }
 
-  .photograph-header  {
+  .photograph-header {
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
@@ -378,9 +379,10 @@ legend {
     height: auto;
   }
 
-  .imgProfil{
+  .imgProfil {
     margin-left: -20%;
   }
+
   .contact_button {
     font-size: 20px;
     font-weight: bold;
@@ -395,31 +397,35 @@ legend {
     border-radius: 5px;
     cursor: pointer;
   }
-.monProfil{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      height: auto;
-  }
-    
-.photographerName {
-  margin-right:12%;
-  margin-top: 350px;
-  font-size: 2.4rem;
 
-  }
-.photographerCity {
-  margin-right:12%;
-  margin-top: 10px;
-  font-size: 1.5rem;
-  }
-.monProfil .photographerTagline {
-  margin-right:12%;
-  margin-top: 10px;
-  font-size: 1.2rem;
+  .monProfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
   }
 
-  #trier{
+  .photographerName {
+    margin-right: 3%;
+    margin-top: 350px;
+    font-size: 2.4rem;
+
+  }
+
+  .photographerCity {
+    margin-right: 3%;
+    margin-top: 10px;
+    font-size: 1.5rem;
+  }
+
+  .monProfil .photographerTagline {
+    margin-right: 3%;
+    margin-top: 10px;
+    font-size: 1.2rem;
+  }
+
+
+  #trier {
     margin-top: 40px;
     margin-bottom: 60px;
     margin-left: 3%;
@@ -430,70 +436,580 @@ legend {
     border: none;
     border-radius: 5px;
   }
-  #trierPar{
+
+  #trierPar {
     margin-left: 15%;
   }
-  #photographeMedia{
+
+  #photographeMedia {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     gap: 3rem;
     margin-left: 15%;
+    margin-right: 15%;
   }
-#all_Media_Like{
-  margin-left: 22.4%;
-}
+
+  #all_Media_Like {
+    margin-left: 22.4%;
+  }
+
   /* CONTACT FORM */
 
   .modal {
-      width: 350px;
+    width: 350px;
   }
 
   .modal header {
-      flex-direction: row;
+    flex-direction: row;
   }
 
   .modal header h2 {
-      font-size: 25px;
+    font-size: 25px;
   }
 
   .modal header img {
-      width: 20px;
+    width: 20px;
   }
 
   form label {
-      font-size: 20px;
+    font-size: 20px;
   }
 
   form input {
     height: 40px;
   }
 
+  .contact_button {
+    height: 60px;
+  }
+}
+@media screen and (max-width: 940px) {
+  .logo {
+    height: 30px;
+    margin-left: 50px;
+  }
 
+  .photograph-header {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
+    height: auto;
+  }
+
+  .imgProfil {
+    margin-left: -20%;
+  }
 
   .contact_button {
-      height: 60px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding: 11px;
+    margin-top: 20%;
+    margin-left: 5%;
+    width: 170px;
+    height: 70px;
+    border: none;
+    background-color: #901C1C;
+    border-radius: 5px;
+    cursor: pointer;
   }
 
-  /* LIGHTBOX */
-
-  .lightbox article {
-      font-size: 1em;
+  .monProfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
   }
 
-  .lightbox h2 {
-      font-size: 14px;
+  .photographerName {
+    margin-right: 8%;
+    margin-top: 350px;
+    font-size: 2.4rem;
+
   }
 
-  /* FRAME */
-
-  .frame {
-      width: 16em;
-      height: 5em;
+  .photographerCity {
+    margin-right: 8%;
+    margin-top: 10px;
+    font-size: 1.5rem;
   }
 
-  .frame p {
-      font-size: 20px;
+  .monProfil .photographerTagline {
+    margin-right: 8%;
+    margin-top: 10px;
+    font-size: 1.2rem;
+  }
+
+
+
+  #trier {
+    margin-top: 40px;
+    margin-bottom: 60px;
+    margin-left: 3%;
+    font-size: 25px;
+    padding: 5px;
+    background-color: #901c1c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  #trierPar {
+    margin-left: 33%;
+  }
+
+  #photographeMedia {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    margin-left: 33%;
+    margin-right: 15%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .logo {
+    height: 30px;
+    margin-left: 50px;
+  }
+
+  .photograph-header {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
+    height: auto;
+  }
+
+  .imgProfil {
+    margin-left: -20%;
+  }
+
+  .contact_button {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding: 11px;
+    margin-top: 20%;
+    margin-left: 5%;
+    width: 170px;
+    height: 70px;
+    border: none;
+    background-color: #901C1C;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .monProfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  .photographerName {
+    margin-right: 8%;
+    margin-top: 350px;
+    font-size: 2.4rem;
+
+  }
+
+  .photographerCity {
+    margin-right: 8%;
+    margin-top: 10px;
+    font-size: 1.5rem;
+  }
+
+  .monProfil .photographerTagline {
+    margin-right: 8%;
+    margin-top: 10px;
+    font-size: 1.2rem;
+  }
+
+
+
+  #trier {
+    margin-top: 40px;
+    margin-bottom: 60px;
+    margin-left: 3%;
+    font-size: 25px;
+    padding: 5px;
+    background-color: #901c1c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  #trierPar {
+    margin-left: 30%;
+  }
+
+  #photographeMedia {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    margin-left: 30%;
+    margin-right: 15%;
+  }
+}
+@media screen and (max-width: 672px) {
+  .logo {
+    height: 30px;
+    margin-left: 50px;
+  }
+
+  .photograph-header {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
+    height: auto;
+  }
+
+  .imgProfil {
+    margin-left: -20%;
+  }
+
+  .contact_button {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding: 11px;
+    margin-top: 20%;
+    margin-left: 5%;
+    width: 170px;
+    height: 70px;
+    border: none;
+    background-color: #901C1C;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .monProfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  .photographerName {
+    margin-right: 8%;
+    margin-top: 350px;
+    font-size: 2.4rem;
+
+  }
+
+  .photographerCity {
+    margin-right: 8%;
+    margin-top: 10px;
+    font-size: 1.5rem;
+  }
+
+  .monProfil .photographerTagline {
+    margin-right: 8%;
+    margin-top: 10px;
+    font-size: 1.2rem;
+  }
+
+
+
+  #trier {
+    margin-top: 40px;
+    margin-bottom: 60px;
+    margin-left: 3%;
+    font-size: 25px;
+    padding: 5px;
+    background-color: #901c1c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  #trierPar {
+    margin-left: 28%;
+  }
+
+  #photographeMedia {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    margin-left: 28%;
+    margin-right: 15%;
+  }
+}
+@media screen and (max-width: 580px) {
+  .logo {
+    height: 30px;
+    margin-left: 50px;
+  }
+
+  .photograph-header {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
+    height: auto;
+  }
+
+  .imgProfil {
+    margin-left: -20%;
+  }
+
+  .contact_button {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding: 11px;
+    margin-top: 20%;
+    margin-left: 5%;
+    width: 170px;
+    height: 70px;
+    border: none;
+    background-color: #901C1C;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .monProfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  .photographerName {
+    margin-right: 8%;
+    margin-top: 350px;
+    font-size: 2.4rem;
+
+  }
+
+  .photographerCity {
+    margin-right: 8%;
+    margin-top: 10px;
+    font-size: 1.5rem;
+  }
+
+  .monProfil .photographerTagline {
+    margin-right: 8%;
+    margin-top: 10px;
+    font-size: 1.2rem;
+  }
+
+
+
+  #trier {
+    margin-top: 40px;
+    margin-bottom: 60px;
+    margin-left: 3%;
+    font-size: 25px;
+    padding: 5px;
+    background-color: #901c1c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  #trierPar {
+    margin-left: 25%;
+  }
+
+  #photographeMedia {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    margin-left: 25%;
+    margin-right: 15%;
+  }
+}
+@media screen and (max-width: 516px) {
+  .logo {
+    height: 30px;
+    margin-left: 50px;
+  }
+
+  .photograph-header {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
+    height: auto;
+  }
+
+  .imgProfil {
+    margin-left: -20%;
+  }
+
+  .contact_button {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding: 11px;
+    margin-top: 20%;
+    margin-left: 5%;
+    width: 170px;
+    height: 70px;
+    border: none;
+    background-color: #901C1C;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .monProfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  .photographerName {
+    margin-right: 8%;
+    margin-top: 350px;
+    font-size: 2.4rem;
+
+  }
+
+  .photographerCity {
+    margin-right: 8%;
+    margin-top: 10px;
+    font-size: 1.5rem;
+  }
+
+  .monProfil .photographerTagline {
+    margin-right: 8%;
+    margin-top: 10px;
+    font-size: 1.2rem;
+  }
+
+
+
+  #trier {
+    margin-top: 40px;
+    margin-bottom: 60px;
+    margin-left: 3%;
+    font-size: 25px;
+    padding: 5px;
+    background-color: #901c1c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  #trierPar {
+    margin-left: 22%;
+  }
+
+  #photographeMedia {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    margin-left: 22%;
+    margin-right: 15%;
+  }
+}
+@media screen and (max-width: 452px) {
+  .logo {
+    height: 30px;
+    margin-left: 50px;
+  }
+
+  .photograph-header {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
+    height: auto;
+  }
+
+  .imgProfil {
+    margin-left: -20%;
+  }
+
+  .contact_button {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding: 11px;
+    margin-top: 20%;
+    margin-left: 5%;
+    width: 170px;
+    height: 70px;
+    border: none;
+    background-color: #901C1C;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .monProfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  .photographerName {
+    margin-right: 8%;
+    margin-top: 350px;
+    font-size: 2.4rem;
+
+  }
+
+  .photographerCity {
+    margin-right: 8%;
+    margin-top: 10px;
+    font-size: 1.5rem;
+  }
+
+  .monProfil .photographerTagline {
+    margin-right: 8%;
+    margin-top: 10px;
+    font-size: 1.2rem;
+  }
+
+
+
+  #trier {
+    margin-top: 40px;
+    margin-bottom: 60px;
+    margin-left: 3%;
+    font-size: 25px;
+    padding: 5px;
+    background-color: #901c1c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  #trierPar {
+    margin-left: 15%;
+  }
+
+  #photographeMedia {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    margin-left: 15%;
+    margin-right: 15%;
   }
 }

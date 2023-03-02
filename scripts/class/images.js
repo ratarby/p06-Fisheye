@@ -1,5 +1,6 @@
 export class Images {
   constructor(data) {
+    this.id = data.id;
     this.title = data.title;
     this.likes = data.likes;
     this.image = data.image;
@@ -12,10 +13,13 @@ export class Images {
     // ------------------------------------------------------------ div
     const divImgContent = document.createElement("div");
     divImgContent.className = "imgContent";
+    divImgContent.setAttribute("aria-label", "imgContent");
     // ------------------------------------------------------------ a
     const linkPicture = document.createElement("a");
-    // ------------------------------------------------------------ img from data
-    const picture = `assets/images/${this.image}`;
+    linkPicture.setAttribute("href", "/photographer.html"+"?"+`id=${this.id}`) ;
+    linkPicture.setAttribute("title", "voir le media");   
+    // ------------------------------------------------------------ img
+    const picture = `assets/images/${this.image}`;// -------------- img from data
     // ------------------------------------------------------------ img content
     const img = document.createElement("img");
     img.setAttribute("src", picture);
