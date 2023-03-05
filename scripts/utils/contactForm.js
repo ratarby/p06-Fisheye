@@ -8,23 +8,24 @@ const main = document.getElementById("main");
 const modal = document.getElementById("contact_modal");
 
 
-// verification des champs du formulaire avec les regex
+//  regex
 const nameRegex = /^\S[a-za-zàáâäçèéêëìíîïñòóôöùúûüA-Z-\s]{2,}$/;
 const emailRegex = /^([a-z0-9]+(?:[._-][a-z0-9]+)*)@([a-z0-9]+(?:[.-][a-z0-9]+)*\.[a-z]{2,})$/;
 
-// récupération des inputs
+// grab imputs
+const formData = document.querySelectorAll(".formData");
 const firstName = document.getElementById("first");
 const lastName = document.getElementById("last");
 const eMail = document.getElementById("email");
 const message = document.getElementById("yourMessage");
 
-// contenu des erreurs
+// errors values
 const errorFirstValue = "Veuillez saisir votre prénom ";
 const errorLastValue = "Veuillez saisir votre nom ";
 const errorEmailValue = " Veuiilez saisir une adresse email valide";
 const errorMsgValue = "Veuillez saisir votre message";
 
-// span pour afficher l'erreur
+// grab errors by id
 const errorFirst = document.getElementById("errorFirst");
 const errorLast = document.getElementById("errorLast");
 const errorEmail = document.getElementById("errorEmail");
@@ -42,7 +43,7 @@ document.addEventListener("keyup", (e) => {
   }
 });
 
-// validation du formulaire au clique sur le bouton submit
+// form valid on submit
 const btnSubmit = document.getElementById("btn-submit");
 const form = document.getElementById("form");
 btnSubmit.addEventListener("click", (e) => {
@@ -52,38 +53,43 @@ btnSubmit.addEventListener("click", (e) => {
 });
 
 
-//validatation des inputs à la perte du focus
+// inputs validation when focus lost
 firstName.addEventListener("change", () => {
-
   if (!nameRegex.test(firstName.value)) {
-    errorFirst.textContent = errorFirstValue;
+    formData[0].setAttribute("data-error", errorFirstValue);
+    // if data-error = true : error message is displayed
+    formData[0].setAttribute("data-error-visible", true);
   } else {
-    errorFirst.style.display = "none";
+    formData[0].setAttribute("data-error-visible", false);
   }
 });
 
 lastName.addEventListener("change", () => {
   if (!nameRegex.test(lastName.value)) {
-    errorLast.textContent = errorLastValue;
+    formData[1].setAttribute("data-error", errorLastValue);
+    formData[1].setAttribute("data-error-visible", true);
   } else {
     errorLast.style.display = "none";
+    formData[1].setAttribute("data-error-visible", false);
   }
 
 });
 
 eMail.addEventListener("change", () => {
   if (!emailRegex.test(eMail.value)) {
-    errorEmail.textContent = errorEmailValue;
+    formData[2].setAttribute("data-error", errorEmailValue);
+    formData[2].setAttribute("data-error-visible", true);
   } else {
-    errorEmail.style.display = "none";
+    formData[2].setAttribute("data-error-visible", false);
   }
 });
 
 message.addEventListener("change", () => {
   if (!message.value) {
-    errorMsg.textContent = errorMsgValue;
+    formData[3].setAttribute("data-error", errorMsgValue);
+    formData[3].setAttribute("data-error-visible", true);
   } else {
-    errorMsg.style.display = "none";
+    formData[2].setAttribute("data-error-visible", false);
   }
 });
 
@@ -115,7 +121,6 @@ closeModal.addEventListener("click", () => {
 
 
 function formValid() {
-
   if (!nameRegex.test(firstName.value.trim())) {
     errorFirst.textContent = errorFirstValue;
     firstName.classList.add("border-red");

@@ -2,8 +2,7 @@ export function photographerFactory(data) {
   const { name, portrait, tagline, price, country, city, id } = data;
   // -------------------------------------------------------------- picture
   const picture = `assets/photographers/${portrait}`;
-
-
+  
   function getUserCardDOM() {
     // ------------------------------------------------------------ article
     const article = document.createElement("article");
@@ -30,12 +29,13 @@ export function photographerFactory(data) {
     prix.textContent = price + "€/jour";
     prix.setAttribute("class", "details_price");
     // ------------------------------------------------------------ a
-    const lien = document.createElement("a");
+    const a = document.createElement("a");
     // ------------------------------------------------------------ article
-    article.appendChild(lien);
+    article.appendChild(a);
     // ------------------------------------------------------------ a
-    lien.appendChild(img);
-    lien.setAttribute("href", `photographer.html?id=${id}`);
+    a.appendChild(img);
+    a.setAttribute("href", `photographer.html?id=${id}`);
+    a.setAttribute(`aria-label`, ` ${name}`)
     // ------------------------------------------------------------ lien
     divText.appendChild(h3);
     divText.appendChild(text);

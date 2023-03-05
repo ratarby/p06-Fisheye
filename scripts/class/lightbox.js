@@ -27,7 +27,7 @@ export class Lightbox {
     main.setAttribute("aria-hidden", "true");
     lightbox.setAttribute("aria-hidden", "false");
     lightboxClose.focus();
-    if (this.listMedias[this.index].image) {
+    if (this.listMedias[this.index].image) { // grab image from listMedias 
       // ------------------------------------------------------------------- image
       const img = this.listMedias[this.index].image;
       // ------------------------------------------------------------------- lightbox

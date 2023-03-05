@@ -1,35 +1,23 @@
-import { photographerFactory } from './../factories/photographer.js';
-
-
-let url = 'data/photographers.json'
-
+import { photographerFactory } from './../factories/photographerFactory.js';
+// display data on the page
+async function displayData(photographers) {
+  const photographersSection = document.querySelector('.photographer_section');
+  photographers.forEach((photographer) => {
+    const photographerModel = photographerFactory(photographer);
+    const userCardDOM = photographerModel.getUserCardDOM();
+    photographersSection.appendChild(userCardDOM);
+  });
+}
+// grab data from json file
 async function getPhotographers() {
-  // Penser à remplacer par les données récupérées dans le json
-  fetch(url)
-    .then((response) => {
-      return response.json()
-    })
-    .then((data) => {
-      const photographersSection = document.querySelector(
-        '.photographer_section',
-      )
-      const photographers = data.photographers
-      return photographers.forEach((photographer) => {
-        const photographerModel = photographerFactory(photographer)
-        const userCardDOM = photographerModel.getUserCardDOM()
-        photographersSection.appendChild(userCardDOM)
-      })
-    })
+  const url = 'data/photographers.json';
+  const response = await fetch(url);
+  const data = await response.json();
+  return data;
 }
-// display data in the DOM 
-async function displayData() {
-  const photographers = await getPhotographers();
-  getPhotographers(photographers);
-}
-
+// initialise la page
 async function init() {
   const { photographers } = await getPhotographers();
   displayData(photographers);
 }
-init()
-
+init();
