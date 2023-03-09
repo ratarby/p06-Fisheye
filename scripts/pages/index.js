@@ -1,4 +1,5 @@
 import { photographerFactory } from './../factories/photographerFactory.js';
+
 // display data on the page
 async function displayData(photographers) {
   const photographersSection = document.querySelector('.photographer_section');
@@ -10,8 +11,7 @@ async function displayData(photographers) {
 }
 // grab data from json file
 async function getPhotographers() {
-  const url = 'data/photographers.json';
-  const response = await fetch(url);
+  let [response] = await Promise.all([fetch('./../data/photographers.json')]);
   const data = await response.json();
   return data;
 }
