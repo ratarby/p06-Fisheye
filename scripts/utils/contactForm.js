@@ -17,7 +17,7 @@ const formData = document.querySelectorAll(".formData");
 const firstName = document.getElementById("first");
 const lastName = document.getElementById("last");
 const eMail = document.getElementById("email");
-const message = document.getElementById("yourMessage");
+const message = document.getElementById("message");
 
 // errors values
 const errorFirstValue = "Veuillez saisir votre prénom ";
@@ -156,6 +156,10 @@ function formValid() {
     msgValidated.innerHTML = "Votre message a bien été reçu";
     msgValidated.style.color = "#fff";
     msgValidated.style.fontSize = "3em";
+
+    console.log(`firstname : ${firstName.value}`);
+    console.log(`lastname : ${lastName.value}`);
+    console.log(`email : ${eMail.value}`);
   }
 }
 

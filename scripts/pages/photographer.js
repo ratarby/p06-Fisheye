@@ -5,8 +5,8 @@ import { MediaFactory } from "./../class/mediaFactory.js";
 //Mettre le code JavaScript lié à la page photographer.html
 let urlPhotographer = window.location.search;
 let searchParams = new URLSearchParams(urlPhotographer);
-let id = searchParams.get("id");
-let url_Photographer = "data/photographers.json";
+let id = searchParams.get(`id`);
+let url_Photographer = `/data/photographers.json`;
 let lightbox = new Lightbox();
 let likeArray = [];
 let pricePhotographe = 0;

@@ -11,7 +11,7 @@ async function displayData(photographers) {
 }
 // grab data from json file
 async function getPhotographers() {
-  let [response] = await Promise.all([fetch('./../data/photographers.json')]);
+  let [response] = await Promise.all([fetch('/data/photographers.json')]);
   const data = await response.json();
   return data;
 }
@@ -20,4 +20,5 @@ async function init() {
   const { photographers } = await getPhotographers();
   displayData(photographers);
 }
+
 init();
