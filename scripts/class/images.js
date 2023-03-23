@@ -46,7 +46,7 @@ export class Images {
     totalLike.className = "total_like";
     // ----------------------------------------------------------------------- i fas fa-heart (iconHeart)
     const iconHeart = document.createElement("i");
-    iconHeart.className = "fas fa-heart";
+    iconHeart.className = "far fa-heart";
     iconHeart.setAttribute("title", "nombre de like du media");
     // ----------------------------------------------------------------------- div>p>i
     likeMedia.appendChild(iconHeart);
@@ -58,9 +58,11 @@ export class Images {
       if (this.liked) {
         parseInt(totalLike.innerHTML--);
         parseInt(increment_total_like.innerHTML--);
+        iconHeart.className = "far fa-heart";
       } else {
         parseInt(totalLike.innerHTML++);
         parseInt(increment_total_like.innerHTML++);
+        iconHeart.className = "fas fa-heart";
       }
       this.liked = !this.liked;
     });

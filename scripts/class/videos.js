@@ -56,7 +56,7 @@ export class Videos {
     allLikes.textContent = this.likes;
     allLikes.className = "total_like";
     // -------------------------------------------------------------------------- div>p>i
-    iconHeart.className = "fas fa-heart";
+    iconHeart.className = "far fa-heart";
     iconHeart.setAttribute("title", "nombre de like du media");
     // -------------------------------------------------------------------------- event click (iconHeart)
     iconHeart.addEventListener("click", (e) => {
@@ -65,9 +65,11 @@ export class Videos {
       if (this.liked) {
         parseInt(allLikes.innerHTML--);
         parseInt(increment_total_like.innerHTML--);
+        iconHeart.className = "far fa-heart";
       } else {
         parseInt(allLikes.innerHTML++);
         parseInt(increment_total_like.innerHTML++);
+        iconHeart.className = "fas fa-heart";
       }
       this.liked = !this.liked;
     });
