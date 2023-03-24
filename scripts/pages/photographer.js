@@ -2,7 +2,7 @@ import { Lightbox } from "./../class/lightbox.js";
 import { MediaFactory } from "./../class/mediaFactory.js";
 
 
-//Mettre le code JavaScript lié à la page photographer.html
+// variables
 let urlPhotographer = window.location.search;
 let searchParams = new URLSearchParams(urlPhotographer);
 let id = searchParams.get(`id`);
@@ -16,10 +16,11 @@ fetch(url_Photographer)
     return response.json();
   })
   .then((data) => {
-    //récupération des données de chaque photographe ==> boucle for
+    // grab photographer data from json file
     for (let i = 0; i < data.photographers.length; i++) {
       if (id == data.photographers[i].id) {
         const photographer = data.photographers[i];
+        console.log(photographer);
         //------------------------------------------------------------------divProfil
         const divProfil = document.getElementById("profil");
         // -----------------------------------------------------------------imgProfil
@@ -48,18 +49,18 @@ fetch(url_Photographer)
         h2.innerHTML = `Contactez moi  ${photographer.name}`;
       }
     }
-
-    // récupération de chaque media du photographe et push dans le tableau listmedia
+    // grab media data by id then push in Lightbox.listmedia and likeArray
     for (let i = 0; i < data.media.length; i++) {
       if (id == data.media[i].photographerId) {
         const media = data.media[i];
+        console.log(media);
         lightbox.listMedias.push(media);
         const likeMedia = media.likes;
         likeArray.push(likeMedia);
       }
     }
 
-    //trie des medias
+    // medias filter
     const trier = document.querySelector("select");
     trier.addEventListener("change", (e) => {
       e.preventDefault();
@@ -82,26 +83,27 @@ fetch(url_Photographer)
           return a.title.localeCompare(b.title);
         });
       }
-      //fonction pour afficher les media triés
+      // call function displayMedia
       displayMedia();
     });
 
-    // Somme des likes avec la méthode reduce
+    // Sum of all media likes with reduce method
     const sommeMediaLike = likeArray.reduce(
       (prevValue, currValue) => prevValue + currValue
     );
+
     const all_media_like = document.getElementById("tout_les_likes");
     const price_photographe = document.getElementById("pricePhotographe");
     all_media_like.innerHTML = sommeMediaLike;
     price_photographe.innerHTML = pricePhotographe + "€/jour";
 
-    // appel de la function global qui affiche les médias
+    // call function displayMedia
     displayMedia();
   });
+console.log(fetch(url_Photographer));
 
-
-// function global qui affiche les médias
-// si "image = true" alors affiche image sinon affiche video
+// global function to display media
+// if "image = true" then display image else display video
 function displayMedia() {
   for (let i = 0; i < lightbox.listMedias.length; i++) {
     const media = lightbox.listMedias[i];
@@ -119,7 +121,6 @@ function displayMedia() {
     } else {
       let type = "video";
       const mediaContent = document.getElementById("photographeMedia");
-      // eslint-disable-next-line no-undef
       const videoModel = new MediaFactory(media, type);
       const videoCardDom = videoModel.getVideoCardDOM();
       mediaContent.appendChild(videoCardDom);

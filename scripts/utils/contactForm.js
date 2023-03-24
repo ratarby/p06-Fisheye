@@ -157,8 +157,8 @@ function formValid() {
     msgValidated.style.color = "#fff";
     msgValidated.style.fontSize = "3em";
 
-    console.log(`firstname : ${firstName.value}`);
-    console.log(`lastname : ${lastName.value}`);
+    console.log(`Prénom : ${firstName.value}`);
+    console.log(`Nom : ${lastName.value}`);
     console.log(`email : ${eMail.value}`);
   }
 }

@@ -1,12 +1,14 @@
 export class Videos {
   constructor(data) {
     this.id = data.id;
+    this.photographerId = data.photographerId;
     this.title = data.title;
     this.likes = data.likes;
     this.video = data.video;
     this.price = data.price;
     this.date = data.date;
     this.liked = false;
+    console.log(this.photographerId);
   }
 
   getVideoCardDOM() {
@@ -16,7 +18,7 @@ export class Videos {
     divVideoContent.setAttribute("aria-label", "videoContent");
     // -------------------------------------------------------------------------- a
     const linkVideo = document.createElement("a");
-    linkVideo.setAttribute("href", "/photographer.html" + "?" + `id=${this.id}`);
+    linkVideo.setAttribute("href", "/photographer.html" + "?" + `id=${this.photographerId}`);
     linkVideo.setAttribute("title", "voir le media");
     // -------------------------------------------------------------------------- video 
     const video = `assets/images/${this.video}`; // ----------------------------- video from data

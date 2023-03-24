@@ -1,12 +1,14 @@
 export class Images {
   constructor(data) {
     this.id = data.id;
+    this.photographerId = data.photographerId;
     this.title = data.title;
     this.likes = data.likes;
     this.image = data.image;
     this.price = data.price;
     this.date = data.date;
     this.liked = false;
+    console.log(this.photographerId);
   }
 
   getImageCardDOM() {
@@ -16,7 +18,7 @@ export class Images {
     divImgContent.setAttribute("aria-label", "imgContent");
     // ----------------------------------------------------------------------- a
     const linkPicture = document.createElement("a");
-    linkPicture.setAttribute("href", "/photographer.html"+"?"+`id=${this.id}`);
+    linkPicture.setAttribute("href", "/photographer.html"+"?"+`id=${this.photographerId}`);
     linkPicture.setAttribute("title", "voir le media");   
     // ----------------------------------------------------------------------- img
     const picture = `assets/images/${this.image}`;// ------------------------- img from data

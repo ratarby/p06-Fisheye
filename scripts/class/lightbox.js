@@ -30,6 +30,7 @@ export class Lightbox {
     if (this.listMedias[this.index].image) { 
       // ------------------------------------------------------------------- image
       const img = this.listMedias[this.index].image;
+      console.log(img);
       // ------------------------------------------------------------------- lightbox
       const lightbox = document.querySelector("#lightbox");
       // ------------------------------------------------------------------- container
@@ -39,6 +40,7 @@ export class Lightbox {
       photo.setAttribute("src", "assets/images/" + img);
       // ------------------------------------------------------------------- title
       let the_title = this.listMedias[this.index].title;
+      console.log(the_title);
       // ------------------------------------------------------------------- title_photo
       let title_photo = document.getElementById("titre_photo");
       photo.setAttribute("alt", the_title);
@@ -52,6 +54,7 @@ export class Lightbox {
     } else {
       // ------------------------------------------------------------------- video
       const video = this.listMedias[this.index].video;
+      console.log(video);
       // ------------------------------------------------------------------- lightbox
       const lightbox = document.querySelector("#lightbox");
       // ------------------------------------------------------------------- container
@@ -66,6 +69,7 @@ export class Lightbox {
       the_video.appendChild(s_video);
       // ------------------------------------------------------------------- title
       let the_title = this.listMedias[this.index].title;
+      console.log(the_title);
       // ------------------------------------------------------------------- title_photo
       let title_photo = document.getElementById("titre_photo");
       title_photo.innerHTML = the_title;
