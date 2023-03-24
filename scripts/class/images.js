@@ -68,6 +68,22 @@ export class Images {
       }
       this.liked = !this.liked;
     });
+    totalLike.addEventListener("click", (e) => {
+      e.preventDefault();
+      let increment_total_like = document.getElementById("tout_les_likes");
+      if (this.liked) {
+        parseInt(totalLike.innerHTML--);
+        parseInt(increment_total_like.innerHTML--);
+        totalLike.className = "total_like";
+        iconHeart.className = "far fa-heart";
+      } else {
+        parseInt(totalLike.innerHTML++);
+        parseInt(increment_total_like.innerHTML++);
+        totalLike.className = "total_like";
+        iconHeart.className = "fas fa-heart";
+      }
+      this.liked = !this.liked;
+    });
     // ---------------------------------------------------------------------- div>div>p>i
     likeMedia.appendChild(totalLike);
     likeMedia.appendChild(iconHeart);
