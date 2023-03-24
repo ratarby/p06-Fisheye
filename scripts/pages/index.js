@@ -11,7 +11,7 @@ async function displayData(photographers) {
 }
 // grab data from json file
 async function getPhotographers() {
-  const [response] = await Promise.all([fetch('/data/photographers.json')]);
+  const response = await fetch('/data/photographers.json');
   console.log(response);
   const data = await response.json();
   // console.log(data);

@@ -113,6 +113,9 @@
     width: 94%;
     font-size: 20px;
   }
+  .lightbox_close {
+    right: 20px;
+  }
 }
 
 @media screen and (max-width: 1115px) {
@@ -126,8 +129,10 @@
   }
   .lightbox #titre_photo {
     width: 92%;
-
     font-size: 18px;
+  }
+  .lightbox_close {
+    right: 20px;
   }
 }
 
@@ -144,6 +149,9 @@
     width: 90%;
     font-size: 16px;
   }
+  .lightbox_close {
+    right: 20px;
+  }
 }
 
 @media screen and (max-width: 836px) {
@@ -158,6 +166,9 @@
   .lightbox #titre_photo {
     width: 88%;
     font-size: 14px;
+  }
+  .lightbox_close {
+    right: 20px;
   }
 }
 
@@ -174,6 +185,9 @@
     width: 84%;
     font-size: 12px;
   }
+  .lightbox_close {
+    right: 20px;
+  }
 }
 
 @media screen and (max-width: 500px) {
@@ -187,8 +201,10 @@
   }
   .lightbox #titre_photo {
     width: 78%;
-
     font-size: 12px;
+  }
+  .lightbox_close {
+    right: 20px;
   }
 }
 
@@ -204,6 +220,9 @@
   .lightbox #titre_photo {
     width: 72%;
     font-size: 12px;
+  }
+  .lightbox_close {
+    right: 20px;
   }
 }
 
