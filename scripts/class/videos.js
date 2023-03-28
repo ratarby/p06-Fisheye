@@ -8,6 +8,7 @@ export class Videos {
     this.price = data.price;
     this.date = data.date;
     this.liked = false;
+    this.inc = this.inc.bind(this);
     console.log(this.photographerId);
   }
 
@@ -49,18 +50,48 @@ export class Videos {
     titleVideo.appendChild(h3);
     divVideoContent.appendChild(titleVideo);
     // -------------------------------------------------------------------------- div
-    const likeVideo = document.createElement("div");
-    likeVideo.id = "mediaLike";
+    const likeVideo = document.createElement("button");
+    likeVideo.id = "videoMediaLike";
+    likeVideo.setAttribute("aria-label", "videoMediaLike");
+    likeVideo.setAttribute("role", "button");
     // -------------------------------------------------------------------------- p
     const allLikes = document.createElement("p");
-    // -------------------------------------------------------------------------- i
-    const iconHeart = document.createElement("i");
     allLikes.textContent = this.likes;
     allLikes.className = "total_like";
-    // -------------------------------------------------------------------------- div>p>i
+    // -------------------------------------------------------------------------- i
+    const iconHeart = document.createElement("i");
     iconHeart.className = "far fa-heart";
     iconHeart.setAttribute("title", "nombre de like du media");
+    // -------------------------------------------------------------------------- button>p>i
+    divVideoContent.appendChild(likeVideo);
+    likeVideo.appendChild(allLikes);
+    likeVideo.appendChild(iconHeart);
     // -------------------------------------------------------------------------- event click (iconHeart)
+    likeVideo.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      let increment_total_like = document.getElementById("tout_les_likes");
+      if (this.liked) {
+        parseInt(allLikes.innerHTML--);
+        parseInt(increment_total_like.innerHTML--);
+        allLikes.className = "total_like";
+        iconHeart.className = "far fa-heart";
+      } else {
+        parseInt(allLikes.innerHTML++);
+        parseInt(increment_total_like.innerHTML++);
+        allLikes.className = "total_like";
+        iconHeart.className = "fas fa-heart";
+      }
+      this.liked = !this.liked;
+    });
+    // -------------------------------------------------------------------------- div>div>div>p>i
+    likeVideo.appendChild(allLikes);
+    likeVideo.appendChild(iconHeart);
+    divVideoContent.appendChild(likeVideo);
+    return divVideoContent;
+  }
+
+  inc(iconHeart, allLikes) {
     iconHeart.addEventListener("click", (e) => {
       e.preventDefault();
       let increment_total_like = document.getElementById("tout_les_likes");
@@ -91,11 +122,6 @@ export class Videos {
       }
       this.liked = !this.liked;
     });
-    // -------------------------------------------------------------------------- div>div>div>p>i
-    likeVideo.appendChild(allLikes);
-    likeVideo.appendChild(iconHeart);
-    divVideoContent.appendChild(likeVideo);
-    return divVideoContent;
   }
 }
 

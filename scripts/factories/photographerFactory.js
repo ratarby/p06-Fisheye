@@ -10,6 +10,10 @@ export function photographerFactory(data) {
     const img = document.createElement("img");
     img.setAttribute("src", picture);
     img.setAttribute("alt", "photo du photographe");
+    // ------------------------------------------------------------ a
+    const a = document.createElement("a");
+    a.setAttribute("href", `photographer.html?id=${id}`);
+    a.setAttribute("arial-label", "name");
     // ------------------------------------------------------------ h2
     const h2 = document.createElement("h2");
     h2.textContent = name;
@@ -28,21 +32,21 @@ export function photographerFactory(data) {
     const prix = document.createElement("p");
     prix.textContent = price + "€/jour";
     prix.setAttribute("class", "details_price");
-    // ------------------------------------------------------------ a
-    const a = document.createElement("a");
+
     // ------------------------------------------------------------ article
     article.appendChild(a);
     // ------------------------------------------------------------ a
     a.appendChild(img);
     a.setAttribute("href", `photographer.html?id=${id}`);
-    a.setAttribute(`aria-label`, ` ${name}`)
+    a.setAttribute("class", "presentation");
+    a.appendChild(h2);
     // ------------------------------------------------------------ lien
+    article.appendChild(a);
     divText.appendChild(h3);
     divText.appendChild(text);
     divText.appendChild(prix);
-    article.appendChild(h2);
     article.appendChild(divText);
     return article;
   }
-  return { name, picture, city, id, getUserCardDOM };
+  return { name, picture, country, city, id, getUserCardDOM };
 }

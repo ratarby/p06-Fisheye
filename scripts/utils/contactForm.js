@@ -160,6 +160,7 @@ function formValid() {
     console.log(`Prénom : ${firstName.value}`);
     console.log(`Nom : ${lastName.value}`);
     console.log(`email : ${eMail.value}`);
+    console.log(`message : ${message.value}`);
   }
 }
 

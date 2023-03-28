@@ -8,6 +8,7 @@ export class Images {
     this.price = data.price;
     this.date = data.date;
     this.liked = false;
+    this.inc = this.inc.bind(this);
     console.log(this.photographerId);
   }
 
@@ -40,8 +41,10 @@ export class Images {
     titleMedia.appendChild(h3);
     divImgContent.appendChild(titleMedia);
     // ----------------------------------------------------------------------- div
-    const likeMedia = document.createElement("div");
+    const likeMedia = document.createElement("button");
     likeMedia.id = "mediaLike";
+    likeMedia.setAttribute('aria-label', 'mediaLike');
+    likeMedia.setAttribute('role', 'button');
     // ----------------------------------------------------------------------- p
     let totalLike = document.createElement("p");
     totalLike.textContent = this.likes;
@@ -50,10 +53,35 @@ export class Images {
     const iconHeart = document.createElement("i");
     iconHeart.className = "far fa-heart";
     iconHeart.setAttribute("title", "nombre de like du media");
-    // ----------------------------------------------------------------------- div>p>i
+    // ----------------------------------------------------------------------- button>p>i
+    divImgContent.appendChild(likeMedia);
     likeMedia.appendChild(iconHeart);
     likeMedia.appendChild(totalLike);
     // ----------------------------------------------------------------------- event click (iconHeart)
+    likeMedia.addEventListener("click", (e) => {
+      e.preventDefault();
+      
+      let increment_total_like = document.getElementById("tout_les_likes");
+      if (this.liked) {
+        parseInt(totalLike.innerHTML--);
+        parseInt(increment_total_like.innerHTML--);
+        iconHeart.className = "far fa-heart";
+      } else {
+        parseInt(totalLike.innerHTML++);
+        parseInt(increment_total_like.innerHTML++);
+        iconHeart.className = "fas fa-heart";
+      }
+      this.liked = !this.liked;
+    });
+    // ---------------------------------------------------------------------- div>div>p>i
+    likeMedia.appendChild(totalLike);
+    likeMedia.appendChild(iconHeart);
+    
+    divImgContent.appendChild(likeMedia);
+    return divImgContent;
+  }
+
+  inc(iconHeart, totalLike) {
     iconHeart.addEventListener("click", (e) => {
       e.preventDefault();
       let increment_total_like = document.getElementById("tout_les_likes");
@@ -84,10 +112,6 @@ export class Images {
       }
       this.liked = !this.liked;
     });
-    // ---------------------------------------------------------------------- div>div>p>i
-    likeMedia.appendChild(totalLike);
-    likeMedia.appendChild(iconHeart);
-    divImgContent.appendChild(likeMedia);
-    return divImgContent;
+    
   }
 }
