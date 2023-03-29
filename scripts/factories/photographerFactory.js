@@ -41,11 +41,10 @@ export function photographerFactory(data) {
     a.setAttribute("class", "presentation");
     a.appendChild(h2);
     // ------------------------------------------------------------ lien
-    article.appendChild(a);
+    a.appendChild(divText);
     divText.appendChild(h3);
     divText.appendChild(text);
     divText.appendChild(prix);
-    article.appendChild(divText);
     return article;
   }
   return { name, picture, country, city, id, getUserCardDOM };
