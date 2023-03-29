@@ -284,7 +284,7 @@ form textarea {
   border-radius: 5px;
 }
 
-.titreMedia {
+h3.titreMedia {
   font-size: 1.2rem;
   font-weight: 500;
   color: var(--secondary-color);
@@ -320,8 +320,8 @@ button {
   color: var(--secondary-color);
   background-color: transparent;
 }
-
 #mediaLike>i {
+  color: var(--secondary-color);
   margin-top: .6rem;
   margin-left: 8px;
   font-size: 1.25rem;
@@ -341,8 +341,6 @@ button {
   font-size: 1.25rem;
   cursor: pointer;
 }
-
-
 #mediaLike>p {
   margin-top: .6rem;
   margin-left: 16px;

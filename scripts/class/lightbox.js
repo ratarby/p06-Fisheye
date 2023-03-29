@@ -81,7 +81,7 @@ export class Lightbox {
       lightbox.style.display = "block";
     }
   }
-  // ---------------------------------------------------------------------- display
+  // ---------------------------------------------------------------------- play
   play(position) {
     this.index = position;
   }
