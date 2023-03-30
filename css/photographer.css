@@ -551,21 +551,13 @@ legend {
   }
 
 
-  #trier {
-    margin-top: 40px;
-    margin-bottom: 60px;
-    margin-left: 3%;
-    font-size: 20px;
-    font-weight: 500;
-    padding: 5px;
-    background-color: var(--secondary-color);
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-  }
-
-  #trierPar {
-    margin-left: 15%;
+  .filter_selection {
+    height: 100%;
+    width: 100%;
+    margin-left: 39.2%;
+    display: flex;
+    align-items: center;
+    padding-right: 30px;
   }
 
   #photographeMedia {
@@ -674,21 +666,13 @@ legend {
 
 
 
-  #trier {
-    margin-top: 40px;
-    margin-bottom: 60px;
-    margin-left: 3%;
-    font-size: 20px;
-    font-weight: 500;
-      padding: 5px;
-    background-color: var(--secondary-color);
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-  }
-  
-  #trierPar {
-    margin-left: 33%;
+  .filter_selection {
+    height: 100%;
+    width: 100%;
+    margin-left: 34%;
+    display: flex;
+    align-items: center;
+    padding-right: 30px;
   }
 
   #photographeMedia {
@@ -761,23 +745,13 @@ legend {
     font-size: 1.2rem;
   }
 
-
-
-  #trier {
-    margin-top: 40px;
-    margin-bottom: 60px;
-    margin-left: 3%;
-    font-size: 20px;
-    font-weight: 500;
-      padding: 5px;
-    background-color: var(--secondary-color);
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-  }
-  
-  #trierPar {
-    margin-left: 30%;
+  .filter_selection {
+    height: 100%;
+    width: 100%;
+    margin-left: 31%;
+    display: flex;
+    align-items: center;
+    padding-right: 30px;
   }
 
   #photographeMedia {
@@ -850,23 +824,13 @@ legend {
     font-size: 1.2rem;
   }
 
-
-
-  #trier {
-    margin-top: 40px;
-    margin-bottom: 60px;
-    margin-left: 3%;
-    font-size: 20px;
-    font-weight: 500;
-    padding: 5px;
-    background-color: var(--secondary-color);
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-  }
-  
-  #trierPar {
-    margin-left: 28%;
+  .filter_selection {
+    height: 100%;
+    width: 100%;
+    margin-left: 28.8%;
+    display: flex;
+    align-items: center;
+    padding-right: 30px;
   }
 
   #photographeMedia {
@@ -939,23 +903,13 @@ legend {
     font-size: 1.2rem;
   }
 
-
-
-  #trier {
-    margin-top: 40px;
-    margin-bottom: 60px;
-    margin-left: 3%;
-    font-size: 20px;
-    font-weight: 500;
-    padding: 5px;
-    background-color: var(--secondary-color);
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-  }
-  
-  #trierPar {
-    margin-left: 25%;
+  .filter_selection {
+    height: 100%;
+    width: 100%;
+    margin-left: 26%;
+    display: flex;
+    align-items: center;
+    padding-right: 30px;
   }
 
   #photographeMedia {
@@ -968,7 +922,7 @@ legend {
     margin-right: 15%;
   }
 }
-@media screen and (max-width: 516px) {
+@media screen and (max-width: 500px) {
   .logo {
     height: 30px;
     margin-left: 50px;
@@ -1030,21 +984,13 @@ legend {
 
 
 
-  #trier {
-    margin-top: 40px;
-    margin-bottom: 60px;
-    margin-left: 3%;
-    font-size: 20px;
-    font-weight: 500;
-    padding: 5px;
-    background-color: var(--secondary-color);
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-  }
-  
-  #trierPar {
-    margin-left: 22%;
+  .filter_selection {
+    height: 100%;
+    width: 100%;
+    margin-left: 23%;
+    display: flex;
+    align-items: center;
+    padding-right: 30px;
   }
 
   #photographeMedia {
@@ -1057,92 +1003,4 @@ legend {
     margin-right: 15%;
   }
 }
-@media screen and (max-width: 452px) {
-  .logo {
-    height: 30px;
-    margin-left: 50px;
-  }
 
-  .photograph-header {
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    text-align: center;
-    margin-top: 30px;
-    height: auto;
-  }
-
-  .imgProfil {
-    margin-left: -20%;
-  }
-
-  .contact_button {
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-    padding: 11px;
-    margin-top: 20%;
-    margin-left: 5%;
-    width: 170px;
-    height: 70px;
-    border: none;
-    background-color: var(--secondary-color);
-    border-radius: 5px;
-    cursor: pointer;
-  }
-
-  .monProfil {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: auto;
-  }
-
-  .photographerName {
-    margin-right: 8%;
-    margin-top: 350px;
-    font-size: 2.4rem;
-
-  }
-
-  .photographerCity {
-    margin-right: 8%;
-    margin-top: 10px;
-    font-size: 1.5rem;
-  }
-
-  .monProfil .photographerTagline {
-    margin-right: 8%;
-    margin-top: 10px;
-    font-size: 1.2rem;
-  }
-
-
-
-  #trier {
-    margin-top: 40px;
-    margin-bottom: 60px;
-    margin-left: 3%;
-    font-size: 20px;
-    font-weight: 500;
-    padding: 5px;
-    background-color: var(--secondary-color);
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-  }
-  
-  #trierPar {
-    margin-left: 15%;
-  }
-
-  #photographeMedia {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    gap: 3rem;
-    margin-left: 15%;
-    margin-right: 15%;
-  }
-}
