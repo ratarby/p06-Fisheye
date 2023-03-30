@@ -6,14 +6,18 @@ export function photographerFactory(data) {
   function getUserCardDOM() {
     // ------------------------------------------------------------ article
     const article = document.createElement("article");
+    article.setAttribute("title", "presentation photographe");
+    article.setAttribute("aria-label", "presentation photographe");
     // ------------------------------------------------------------ image
     const img = document.createElement("img");
     img.setAttribute("src", picture);
     img.setAttribute("alt", "photo du photographe");
+    img.setAttribute("aria-label", "photo du photographe");
     // ------------------------------------------------------------ a
     const a = document.createElement("a");
     a.setAttribute("href", `photographer.html?id=${id}`);
-    a.setAttribute("arial-label", "name");
+    a.setAttribute("arial-label", name);
+    a.setAttribute("class", "presentation");
     // ------------------------------------------------------------ h2
     const h2 = document.createElement("h2");
     h2.textContent = name;
@@ -37,8 +41,7 @@ export function photographerFactory(data) {
     article.appendChild(a);
     // ------------------------------------------------------------ a
     a.appendChild(img);
-    a.setAttribute("href", `photographer.html?id=${id}`);
-    a.setAttribute("class", "presentation");
+    // ------------------------------------------------------------ h2
     a.appendChild(h2);
     // ------------------------------------------------------------ lien
     a.appendChild(divText);
