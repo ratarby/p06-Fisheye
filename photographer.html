@@ -12,6 +12,9 @@
   <title>Fisheye - photographe</title>
 </head>
 
+<!-- ACHECKER ====> OK -->
+<!-- WAVE ====> OK -->
+
 <body>
   <!-- Container -->
   <div class="container">
@@ -42,9 +45,9 @@
       <!-- filter -->
       <section class="filter-profil">
         <div class="filter_selection">
-          <label id="filter-id" for="filter-select"> Trier par:</label>
+          <label id="filter-id" for="filters-select"> Trier par:</label>
           <div class="filter-container">
-            <select name="filters" id="filters-select" aria-label="trier par">
+            <select name="filters-select" id="filters-select" aria-label="trierPar">
               <option 
                 value="popularite"
                 id="popularite"
@@ -159,13 +162,15 @@
 
         <!-- message -->
         <div >
-          <label for="Your message" id="label-message">Votre message</label>
+          <label for="message" id="label-message">Votre message</label>
           <textarea 
             type="text" 
             id="message" 
             name="message" 
             aria-label="Your message"
             aria-labelledby="label-message"
+            row="5"
+            cols="33"
           />
           </textarea>
           <span id="errorMessage"></span>

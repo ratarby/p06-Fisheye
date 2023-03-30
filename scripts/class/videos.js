@@ -20,7 +20,7 @@ export class Videos {
     // -------------------------------------------------------------------------- a
     const linkVideo = document.createElement("a");
     linkVideo.setAttribute("href", "/photographer.html" + "?" + `id=${this.photographerId}`);
-    linkVideo.setAttribute("title", "voir le media");
+    linkVideo.setAttribute("title", "voir le videoMedia");
     // -------------------------------------------------------------------------- video 
     const video = `assets/images/${this.video}`; // ----------------------------- video from data
     // -------------------------------------------------------------------------- i
@@ -31,7 +31,9 @@ export class Videos {
     linkVideo.appendChild(play);
     // -------------------------------------------------------------------------- video content
     const videoContent = document.createElement("video");
-    videoContent.className = "media_photographe";
+    videoContent.className = "videoMedia_photographe";
+    videoContent.setAttribute("alt", this.title); // ---------------------------- alt title from data
+    videoContent.setAttribute("aria-label", "videoMedia_photographe");
     // -------------------------------------------------------------------------- source video
     const sourceVideo = document.createElement("source");
     videoContent.appendChild(sourceVideo);
@@ -52,16 +54,20 @@ export class Videos {
     // -------------------------------------------------------------------------- div
     const likeVideo = document.createElement("button");
     likeVideo.id = "videoMediaLike";
+    likeVideo.setAttribute("title", "videoMediaLike");
     likeVideo.setAttribute("aria-label", "videoMediaLike");
     likeVideo.setAttribute("role", "button");
     // -------------------------------------------------------------------------- p
     const allLikes = document.createElement("p");
     allLikes.textContent = this.likes;
     allLikes.className = "total_like";
+    allLikes.setAttribute("title", "nombre de like videoMedia");
+    allLikes.setAttribute("aria-label", "nombre de like videoMedia");
     // -------------------------------------------------------------------------- i
     const iconHeart = document.createElement("i");
     iconHeart.className = "far fa-heart";
-    iconHeart.setAttribute("title", "nombre de like du media");
+    iconHeart.setAttribute("title", "like videoMedia");
+    iconHeart.setAttribute("aria-label", "like videoMedia");
     // -------------------------------------------------------------------------- button>p>i
     divVideoContent.appendChild(likeVideo);
     likeVideo.appendChild(allLikes);

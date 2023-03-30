@@ -28,6 +28,7 @@ export class Images {
     img.setAttribute("src", picture);
     img.className = "media_photographe";
     img.setAttribute("alt", this.title); // ---------------------------------- alt title from data
+    img.setAttribute("aria-label","media_photographe")
     // ----------------------------------------------------------------------- div>a 
     divImgContent.appendChild(linkPicture);
     linkPicture.appendChild(img);
@@ -37,22 +38,27 @@ export class Images {
     const h3 = document.createElement("h3");
     h3.className = "titreMedia";
     h3.textContent = this.title;
+
     // ----------------------------------------------------------------------- div>h3
     titleMedia.appendChild(h3);
     divImgContent.appendChild(titleMedia);
     // ----------------------------------------------------------------------- div
     const likeMedia = document.createElement("button");
     likeMedia.id = "mediaLike";
+    likeMedia.setAttribute('title', 'mediaLike');
     likeMedia.setAttribute('aria-label', 'mediaLike');
     likeMedia.setAttribute('role', 'button');
     // ----------------------------------------------------------------------- p
     let totalLike = document.createElement("p");
     totalLike.textContent = this.likes;
     totalLike.className = "total_like";
+    totalLike.setAttribute("title", "nombre de like media");
+    totalLike.setAttribute("aria-label", "nombre de like media");
     // ----------------------------------------------------------------------- i fas fa-heart (iconHeart)
     const iconHeart = document.createElement("i");
     iconHeart.className = "far fa-heart";
-    iconHeart.setAttribute("title", "nombre de like du media");
+    iconHeart.setAttribute("title", "like media");
+    iconHeart.setAttribute("aria-label", "like media");
     // ----------------------------------------------------------------------- button>p>i
     divImgContent.appendChild(likeMedia);
     likeMedia.appendChild(iconHeart);
