@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <link rel="shortcut icon" href="#">
+  <link rel="icon" type="image/png" href="/assets/icons/favicon.png">
   <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet" />
   <link href="/css/normalize.css" rel="stylesheet" >
   <link href="/css/lightbox.css" rel="stylesheet"  type="text/css" />
@@ -39,27 +40,34 @@
       <!-- End of photograph header -->
 
       <!-- filter -->
-      <div class="trier">
-        <label id="trierPar" for="trier par"> Trier par:</label>
-        <select name="trie" id="trier"aria-label="trier par">
-          <option 
-            value="populaire" 
-            id="populaire"
-            aria-hidden="true">Populaire
-          </option>
-          <option 
-            value="date" 
-            id="date"
-            aria-hidden="true">Date
-          </option>
-            <option 
-              value="titre" 
-              id="titre"
-              aria-hidden="true"
-            >Titre
-          </option>
-        </select>
-      </div>
+      <section class="filter-profil">
+        <div class="filter_selection">
+          <label id="filter-id" for="filter-select"> Trier par:</label>
+          <div class="filter-container">
+            <select name="filters" id="filters-select" aria-label="trier par">
+              <option 
+                value="popularite"
+                id="popularite"
+                aria-hidden="true"
+                >Popularité
+              </option>
+              <option 
+                value="date" 
+                id="date"
+                aria-hidden="true"
+              >Date
+              </option>
+              <option 
+                value="titre"
+                id="titre"
+                aria-hidden="true"
+              >Titre
+              </option>
+            </option>
+            </select>
+          </div>  
+        </div>
+      </section>
       <!-- End of filter -->
 
       <!-- Lightbox -->

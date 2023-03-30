@@ -31,7 +31,6 @@ const errorLast = document.getElementById("errorLast");
 const errorEmail = document.getElementById("errorEmail");
 const errorMsg = document.getElementById("errorMessage");
 
-
 const msgValidated = document.getElementById("formValid");
 
 document.addEventListener("keyup", (e) => {
@@ -110,14 +109,6 @@ closeModal.addEventListener("click", () => {
   displayModal.focus();
 });
 
-closeModal.addEventListener("click", () => {
-  const main = document.getElementById("main");
-  const modal = document.getElementById("contact_modal");
-  modal.style.display = "none";
-  main.setAttribute("aria-hidden", "false");
-  modal.setAttribute("aria-hidden", "true");
-  displayModal.focus();
-});
 
 
 function formValid() {
@@ -155,7 +146,7 @@ function formValid() {
   if (firstName.value && lastName.value && eMail.value && message.value) {
     msgValidated.innerHTML = "Votre message a bien été reçu";
     msgValidated.style.color = "#fff";
-    msgValidated.style.fontSize = "3em";
+    msgValidated.style.fontSize = "3rem";
 
     console.log(`Prénom : ${firstName.value}`);
     console.log(`Nom : ${lastName.value}`);

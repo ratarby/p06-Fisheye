@@ -1,7 +1,6 @@
 import { Lightbox } from "./../class/lightbox.js";
 import { MediaFactory } from "./../class/mediaFactory.js";
 
-
 // variables
 let urlPhotographer = window.location.search;
 let searchParams = new URLSearchParams(urlPhotographer);
@@ -60,33 +59,47 @@ fetch(url_Photographer)
       }
     }
 
-    // medias filter
-    const trier = document.querySelector("select");
-    trier.addEventListener("change", (e) => {
-      e.preventDefault();
+    // medias filtreArrow
+    const filtreArrow = document.querySelector(".filter-container");
+    function Arrow() {
+      if (filtreArrow.classList.contains("on")) {
+        filtreArrow.classList.remove("on");
+      } else {
+        filtreArrow.classList.add("on");
+      }
+      // console.log(filtreArrow);
+    }
+    filtreArrow.addEventListener("click", Arrow);
 
+    // medias FILTER
+    const trier = document.querySelector("#filters-select");
+    trier.addEventListener("change", () => {
+      // remove all child of mediaContent
       const mediaContent = document.getElementById("photographeMedia");
       while (mediaContent.hasChildNodes()) {
         mediaContent.removeChild(mediaContent.firstChild);
       }
-      const trie = trier.options;
+      const trie = trier.options;    
       if (trie.selectedIndex == 0) {
         lightbox.listMedias.sort((a, b) => {
           return b.likes - a.likes;
         });
-      } else if (trie.selectedIndex == 1) {
+      }
+      if (trie.selectedIndex == 1) {
         lightbox.listMedias.sort((a, b) => {
           return new Date(b.date) - new Date(a.date);
         });
-      } else if (trie.selectedIndex == 2) {
+      }
+      if (trie.selectedIndex == 2) {
         lightbox.listMedias.sort((a, b) => {
-          return a.title.localeCompare(b.title);
+          return (a.title).localeCompare(b.title);
         });
       }
       // call function displayMedia
       displayMedia();
     });
 
+    // FRAME
     // Sum of all media likes with reduce method
     const sommeMediaLike = likeArray.reduce(
       (prevValue, currValue) => prevValue + currValue
