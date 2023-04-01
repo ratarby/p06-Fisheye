@@ -14,7 +14,6 @@
 
 <!-- ACHECKER ====> OK -->
 <!-- WAVE ====> OK -->
-
 <body>
   <!-- Container -->
   <div class="container">
@@ -45,30 +44,35 @@
       <!-- filter -->
       <section class="filter-profil">
         <div class="filter_selection">
-          <label id="filter-id" for="filters-select"> Trier par:</label>
+          <label id="filter-id" for="filters-select">Trier par</label>
           <div class="filter-container">
-            <select name="filters-select" id="filters-select" aria-label="trierPar">
-              <option 
-                value="popularite"
-                id="popularite"
+            <select name="filters" id="filters-select" aria-label="Trier par">
+              <option
+                disabled
+                value="popularity"
                 aria-hidden="true"
-                >Popularité
-              </option>
-              <option 
-                value="date" 
-                id="date"
+              ></option>
+              <option value="popularite">Popularité</option>
+              <option
+                disabled
+                value="date"
                 aria-hidden="true"
-              >Date
+                style="color: whitesmoke"
+              >
+                ──────────
               </option>
-              <option 
+              <option value="date">Date</option>
+              <option
+                disabled
                 value="titre"
-                id="titre"
                 aria-hidden="true"
-              >Titre
+                style="color: whitesmoke"
+              >
+                ──────────
               </option>
-            </option>
+              <option value="titre" height="30px">Titre</option>
             </select>
-          </div>  
+          </div>
         </div>
       </section>
       <!-- End of filter -->
