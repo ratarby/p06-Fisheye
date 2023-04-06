@@ -25,11 +25,6 @@ const errorLastValue = "Veuillez saisir votre nom ";
 const errorEmailValue = " Veuiilez saisir une adresse email valide";
 const errorMsgValue = "Veuillez saisir votre message";
 
-// grab errors by id
-const errorFirst = document.getElementById("errorFirst");
-const errorLast = document.getElementById("errorLast");
-const errorEmail = document.getElementById("errorEmail");
-const errorMsg = document.getElementById("errorMessage");
 
 const msgValidated = document.getElementById("formValid");
 
@@ -68,7 +63,6 @@ lastName.addEventListener("change", () => {
     formData[1].setAttribute("data-error", errorLastValue);
     formData[1].setAttribute("data-error-visible", true);
   } else {
-    errorLast.style.display = "none";
     formData[1].setAttribute("data-error-visible", false);
   }
 
@@ -85,10 +79,10 @@ eMail.addEventListener("change", () => {
 
 message.addEventListener("change", () => {
   if (!message.value) {
-    formData[3].setAttribute("data-error", errorMsgValue);
+    formData[3].setAttribute("data-error",errorMsgValue);
     formData[3].setAttribute("data-error-visible", true);
   } else {
-    formData[2].setAttribute("data-error-visible", false);
+    formData[3].setAttribute("data-error-visible", false);
   }
 });
 
@@ -113,35 +107,32 @@ closeModal.addEventListener("click", () => {
 
 function formValid() {
   if (!nameRegex.test(firstName.value.trim())) {
-    errorFirst.textContent = errorFirstValue;
-    firstName.classList.add("border-red");
+    formData[0].setAttribute("data-error", errorFirstValue);
+    // if data-error = true : error message is displayed
+    formData[0].setAttribute("data-error-visible", true);
   } else {
-    errorFirst.style.display = "none";
-    firstName.classList.remove("border-red");
+    formData[0].setAttribute("data-error-visible", false);
+    
   }
 
   if (!nameRegex.test(lastName.value.trim())) {
-    errorLast.textContent = errorLastValue;
-    lastName.classList.add("border-red");
-
+    formData[1].setAttribute("data-error", errorLastValue);
+    formData[1].setAttribute("data-error-visible", true);
   } else {
-    errorLast.style.display = "none";
-    lastName.classList.remove("border-red");
+    formData[1].setAttribute("data-error-visible", false);
   }
 
   if (!emailRegex.test(eMail.value.trim())) {
-    errorEmail.textContent = errorEmailValue;
-    eMail.classList.add("border-red");
+    formData[2].setAttribute("data-error", errorEmailValue);
+    formData[2].setAttribute("data-error-visible", true);
   } else {
-    errorEmail.style.display = "none";
-    eMail.classList.remove("border-red");
+    formData[2].setAttribute("data-error-visible", false);
   }
   if (!message.value.trim()) {
-    errorMsg.textContent = errorMsgValue;
-    message.classList.add("border-red");
+    formData[3].setAttribute("data-error", errorMsgValue);
+    formData[3].setAttribute("data-error-visible", true);
   } else {
-    errorMsg.style.display = "none";
-    message.classList.remove("border-red");
+    formData[3].setAttribute("data-error-visible", false);
   }
   if (firstName.value && lastName.value && eMail.value && message.value) {
     msgValidated.innerHTML = "Votre message a bien été reçu";
