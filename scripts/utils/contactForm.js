@@ -25,7 +25,7 @@ const errorLastValue = "Veuillez saisir votre nom ";
 const errorEmailValue = " Veuiilez saisir une adresse email valide";
 const errorMsgValue = "Veuillez saisir votre message";
 
-
+// form validation
 const msgValidated = document.getElementById("formValid");
 
 document.addEventListener("keyup", (e) => {
@@ -102,8 +102,6 @@ closeModal.addEventListener("click", () => {
   modal.setAttribute("aria-hidden", "true");
   displayModal.focus();
 });
-
-
 
 function formValid() {
   if (!nameRegex.test(firstName.value.trim())) {
