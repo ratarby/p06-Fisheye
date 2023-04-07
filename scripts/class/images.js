@@ -72,10 +72,12 @@ export class Images {
         parseInt(totalLike.innerHTML--);
         parseInt(increment_total_like.innerHTML--);
         iconHeart.className = "far fa-heart";
+        console.log('disliked');
       } else {
         parseInt(totalLike.innerHTML++);
         parseInt(increment_total_like.innerHTML++);
         iconHeart.className = "fas fa-heart";
+        console.log('liked');
       }
       this.liked = !this.liked;
     });

@@ -75,18 +75,20 @@ export class Videos {
     // -------------------------------------------------------------------------- event click (iconHeart)
     likeVideo.addEventListener("click", (e) => {
       e.preventDefault();
-
+      
       let increment_total_like = document.getElementById("tout_les_likes");
       if (this.liked) {
         parseInt(allLikes.innerHTML--);
         parseInt(increment_total_like.innerHTML--);
         allLikes.className = "total_like";
         iconHeart.className = "far fa-heart";
+        console.log('disliked');
       } else {
         parseInt(allLikes.innerHTML++);
         parseInt(increment_total_like.innerHTML++);
         allLikes.className = "total_like";
         iconHeart.className = "fas fa-heart";
+        console.log('liked');
       }
       this.liked = !this.liked;
     });

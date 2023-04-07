@@ -67,6 +67,7 @@ fetch(url_Photographer)
       } else {
         filtreArrow.classList.add("on");
       }
+      console.log(filtreArrow);
     }
     filtreArrow.addEventListener("click", Arrow);
 

@@ -95,6 +95,7 @@ export class Lightbox {
       } else if (e.key === "ArrowLeft") {
         this.prev();
       }
+      console.log(e.key);
     });
   }
 

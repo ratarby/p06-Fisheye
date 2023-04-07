@@ -132,6 +132,7 @@ function formValid() {
   } else {
     formData[3].setAttribute("data-error-visible", false);
   }
+  
   if (firstName.value && lastName.value && eMail.value && message.value) {
     msgValidated.innerHTML = "Votre message a bien été reçu";
     msgValidated.style.color = "#fff";
