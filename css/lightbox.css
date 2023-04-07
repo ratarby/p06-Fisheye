@@ -11,9 +11,20 @@
   transition: opacity 0.3s;
 }
 
-.lightbox_prev,
+.lightbox_prev{
+  background-image: url("./../assets/icons/left_arrow.svg") center center / 50px 50px no-repeat;
+  width: 70px;
+  height: 100%;
+  border: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin-top: -27px;
+  margin-left: 120px;
+  z-index: 11;
+}
 .lightbox_next {
-  background-image: url("assets/icons/next.svg") center center / 50px 50px no-repeat;
+  background-image: url("./../assets/icons/right_arrow.svg") center center / 50px 50px no-repeat;
   width: 70px;
   height: 100%;
   border: none;
@@ -28,7 +39,7 @@
 .lightbox_prev {
   left: 0;
   background-color: transparent;
-  transform: rotate(180deg) translateY(-40px);
+  transform: translateY(34px);
   margin-left: 2%;
   height: 1193px;
 }
